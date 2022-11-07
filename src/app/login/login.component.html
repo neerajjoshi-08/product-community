@@ -1,0 +1,66 @@
+<section>
+    <div class="main container-fluid shadow pt-1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h3><strong>Login</strong></h3>
+            </div>
+        </nav>
+
+        <div class="body-container container my-5 col-xl-4 col-lg-6 col-md-7 col-4">
+            <form class="my-5" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+                <div class="container">
+                    <div class="row">
+                        <h5 class="text-center">Login with your email and password:</h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group input-group-lg">
+                            <input type="text" formControlName="emailId" class="form-control" placeholder="Email *">
+                        </div>
+                        <div *ngIf="f.emailId.invalid && (f.emailId.dirty || f.emailId.touched)" class="error">
+                            <div [hidden]="!f.emailId.errors?.required">
+                                <i class="fa fa-exclamation-triangle me-1"></i>Email Id cannot be blank
+                            </div>
+                            <div [hidden]="!f.emailId.errors?.email"><i
+                                    class="fa fa-exclamation-triangle me-1"></i>Email Id should be valid</div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-group input-group-lg">
+                            <input type="password" formControlName="password" class="form-control"
+                                placeholder="Password *">
+                        </div>
+                        <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="error">
+                            <div [hidden]="!f.password.errors?.required">
+                                <i class="fa fa-exclamation-triangle me-1"></i>Password cannot be blank
+                            </div>
+                            <div [hidden]="!f.password.errors?.minlength">
+                                <i class="fa fa-exclamation-triangle me-1"></i>Password should at least 6 characters long
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="text-center mt-5">
+                            <button [disabled]="!formGroup.valid" type="submit" class="btn btn-dark shadow">
+                                <h5>SUBMIT</h5>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="offset-11">
+                            <a [routerLink]="['/register']">Create account?</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

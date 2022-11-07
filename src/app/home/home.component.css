@@ -1,0 +1,70 @@
+.img {
+    position: absolute;
+    background-image: url('src/assets/images/homepage-wallpaper.jpg');
+    background-repeat: no-repeat; 
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.user {
+    color: white;
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    vertical-align: top;
+}
+
+.user i {
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+
+.user a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 5px;
+    vertical-align: top;
+
+}
+
+.message {
+    position: absolute;
+    top: 50vh;
+    right: 1vw;
+    color: white;
+}
+
+.message * {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+.message p {
+    font-size: 1.1rem;
+    letter-spacing: 0.03rem;
+}
+
+.stat {
+    position: absolute;
+    color: white;
+    bottom: 2vh;
+}
+
+.stat i {
+    font-size: 2.5rem;
+}
+
+.stat h5 {
+    margin: 0;
+    padding: 0;
+}
+
+#unique {
+    position: absolute;
+    color: white;
+}

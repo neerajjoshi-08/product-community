@@ -1,0 +1,124 @@
+<section>
+    <div class="main container-fluid shadow pt-1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h3><strong>Registration</strong></h3>
+            </div>
+        </nav>
+
+        <div class="body-container container my-5 col-xl-5 col-lg-7 col-md-8 col-4">
+            <form [formGroup]="formGroup" class="my-5" (ngSubmit)="onSubmit()">
+                <div class="container">
+                    <div class="row">
+                        <h5 class="text-center">Register with your email and password:</h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group input-group-lg">
+                            <input type="text" formControlName="emailId" class="form-control" placeholder="Email *">
+                        </div>
+                        <div *ngIf="submitted || (f.emailId.invalid && (f.emailId.dirty || f.emailId.touched))"
+                            class="error">
+                            <div [hidden]="!f.emailId.errors?.required">
+                                <i class="fa fa-exclamation-triangle me-1"></i>Email Id cannot be blank
+                            </div>
+                            <div [hidden]="!f.emailId.errors?.email"><i
+                                    class="fa fa-exclamation-triangle me-1"></i>Email Id should be valid</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group input-group-lg">
+                                <input type="text" formControlName="firstName" class="form-control"
+                                    placeholder="First name *">
+                            </div>
+                            <div *ngIf="submitted || (f.firstName.invalid && (f.firstName.dirty || f.firstName.touched))"
+                                class="error">
+                                <div [hidden]="!f.firstName.errors?.required">
+                                    <i class="fa fa-exclamation-triangle me-1"></i>First name cannot be blank
+                                </div>
+                                <div [hidden]="!f.firstName.errors?.email"><i
+                                        class="fa fa-exclamation-triangle me-1"></i>First name should be at least 3
+                                    characters long</div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="input-group input-group-lg">
+                                <input type="text" formControlName="lastName" class="form-control"
+                                    placeholder="Last name *">
+                            </div>
+                            <div *ngIf="submitted || (f.lastName.invalid && (f.lastName.dirty || f.lastName.touched))"
+                                class="error">
+                                <div [hidden]="!f.lastName.errors?.required">
+                                    <i class="fa fa-exclamation-triangle me-1"></i>Last name cannot be blank
+                                </div>
+                                <div [hidden]="!f.lastName.errors?.email"><i
+                                        class="fa fa-exclamation-triangle me-1"></i>Last name should be at least 3
+                                    characters long</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group input-group-lg">
+                                <input type="password" formControlName="password" class="form-control"
+                                    placeholder="Password *">
+                            </div>
+                            <div *ngIf="submitted || (f.password.invalid && (f.password.dirty || f.password.touched))"
+                                class="error">
+                                <div [hidden]="!f.password.errors?.required">
+                                    <i class="fa fa-exclamation-triangle me-1"></i>Password cannot be blank
+                                </div>
+                                <div [hidden]="!f.password.errors?.minlength">
+                                    <i class="fa fa-exclamation-triangle me-1"></i>Password should at least 6 characters
+                                    long
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="input-group input-group-lg">
+                                <input type="password" formControlName="confirmPassword" class="form-control"
+                                    placeholder="Confirm password *">
+                            </div>
+                            <div *ngIf="submitted || (f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched))"
+                                class="error">
+                                <div [hidden]="!f.confirmPassword.errors?.required">
+                                    <i class="fa fa-exclamation-triangle me-1"></i>Confirm Password cannot be blank
+                                </div>
+                                <div [hidden]="!f.confirmPassword.errors?.minlength">
+                                    <i class="fa fa-exclamation-triangle me-1"></i>Confirm Password should at least 6
+                                    characters
+                                    long & password must be same
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="text-center mt-5">
+                            <button [disabled]="!formGroup.valid" type="submit" class="btn btn-dark shadow">
+                                <h5>SUBMIT</h5>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="offset-11">
+                            <a [routerLink]="['/login']">Have an account already?</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<input type="text" [(ngModel)]="test">
+<h1>{{test}}</h1>
